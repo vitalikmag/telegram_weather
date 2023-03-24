@@ -44,7 +44,7 @@ async def get_weather(message: types.Message):
         feels_like = data['main']['feels_like']
         sunrise_time = datetime.datetime.fromtimestamp(data['sys']['sunrise'])
         sunset_time = datetime.datetime.fromtimestamp(data['sys']['sunset'])
-        lenght_day = datetime.datetime.fromtimestamp(data['sys']['sunset']) - datetime.datetime.fromtimestamp(
+        length_day = datetime.datetime.fromtimestamp(data['sys']['sunset']) - datetime.datetime.fromtimestamp(
             data['sys']['sunrise'])
 
         await message.reply(f'*** {datetime.datetime.now().strftime("%d-%m-%Y %H:%M")} ***\n'
@@ -56,7 +56,7 @@ async def get_weather(message: types.Message):
                             f'Ощущается как: {feels_like} °C\n'
                             f'Время рассвета: {sunrise_time.strftime("%d-%m-%Y %H:%M")}\n'
                             f'Время заката: {sunset_time.strftime("%d-%m-%Y %H:%M")}\n'
-                            f'Продолжительность дня: {lenght_day}\n'
+                            f'Продолжительность дня: {length_day}\n'
                             )
 
     except:
