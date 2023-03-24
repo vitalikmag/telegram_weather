@@ -1,4 +1,3 @@
-from pprint import pprint
 import datetime
 import requests
 from config import open_weather_token
@@ -19,7 +18,6 @@ def get_weather(city, open_weather_token):
             f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid={open_weather_token}&units=metric'
         )
         data = r.json()
-        # pprint(data)
 
         city = data['name']
         description = data['weather'][0]['main']
@@ -33,7 +31,7 @@ def get_weather(city, open_weather_token):
         feels_like = data['main']['feels_like']
         sunrise_time = datetime.datetime.fromtimestamp(data['sys']['sunrise'])
         sunset_time = datetime.datetime.fromtimestamp(data['sys']['sunset'])
-        lenght_day = datetime.datetime.fromtimestamp(data['sys']['sunset']) - datetime.datetime.fromtimestamp(
+        length_day = datetime.datetime.fromtimestamp(data['sys']['sunset']) - datetime.datetime.fromtimestamp(
             data['sys']['sunrise'])
 
         print(f'*** {datetime.datetime.now().strftime("%d-%m-%Y %H:%M")} ***\n'
@@ -44,7 +42,7 @@ def get_weather(city, open_weather_token):
               f'Ощущается как: {feels_like} °C\n'
               f'Время рассвета: {sunrise_time.strftime("%d-%m-%Y %H:%M")}\n'
               f'Время заката: {sunset_time.strftime("%d-%m-%Y %H:%M")}\n'
-              f'Продолжительность дня: {lenght_day}\n'
+              f'Продолжительность дня: {length_day}\n'
               )
 
     except Exception as ex:

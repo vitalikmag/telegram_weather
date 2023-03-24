@@ -9,9 +9,9 @@ bot = Bot(tg_bot_token)
 dp = Dispatcher(bot)
 
 
-@dp.message_handler(commands=["start"])
-async def start_command(messge: types.Message):
-    await messge.reply('Привет! Где смотрим погоду?')
+@dp.message_handler(commands=['start'])
+async def start_command(message: types.Message):
+    await message.reply('Привет! Где смотрим погоду?')
 
 
 @dp.message_handler()
