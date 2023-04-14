@@ -1,9 +1,9 @@
 ## Telegram bot telegram_weather
 
-•Receiving and processing OpenWeather API data
+• Receiving and processing OpenWeather API data
 
-•Connecting bot via aiogram library
+• Connecting bot via aiogram library
 
-•Creation of message output form for user.
+• Creation of message output form for user.
 
-•Processing incorrect requests.
+• Processing incorrect requests.
